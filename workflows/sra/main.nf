@@ -33,7 +33,7 @@ workflow SRA {
     ids // channel: [ ids ]
 
     main:
-    ch_versions = Channel.empty()
+    ch_versions = channel.empty()
 
     //
     // MODULE: Get SRA run information for public database ids
@@ -178,7 +178,7 @@ workflow SRA {
     //
     // MODULE: Create a MutiQC config file with sample name mappings
     //
-    ch_sample_mappings_yml = Channel.empty()
+    ch_sample_mappings_yml = channel.empty()
     if (params.sample_mapping_fields) {
         MULTIQC_MAPPINGS_CONFIG (
             ch_mappings
